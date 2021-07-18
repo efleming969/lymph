@@ -1,0 +1,6 @@
+{
+  "name": "lymph",
+  "workspaces": [
+    "packages/client-dev-server"
+  ]
+}

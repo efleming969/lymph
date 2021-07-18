@@ -1,0 +1,34 @@
+{
+  "name": "@efleming969/client-dev-server",
+  "version": "1.0.0",
+  "main": "./lib/main/index.js",
+  "types": "./lib/main/index.d.ts",
+  "description": "Minimal dev server",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efleming969/lymph.git"
+  },
+  "author": "Erick Fleming",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/efleming969/lymph/issues"
+  },
+  "homepage": "https://github.com/efleming969/lymph#readme",
+  "devDependencies": {
+    "@lymph/expect": "file:../expect",
+    "@types/mocha": "^8.2",
+    "@types/node": "^15.12",
+    "mocha": "^9.0",
+    "playwright": "^1.12",
+    "regexparam": "^2.0"
+  },
+  "dependencies": {
+    "chokidar": "^3.5",
+    "typescript": "^4.3"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "integrated-tests": "mocha --config mocha-integrated.json",
+    "isolated-tests": "mocha --config mocha-isolated.json"
+  }
+}

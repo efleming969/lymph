@@ -1,0 +1,4 @@
+src
+mocha-*.json
+tsconfig.json
+lib/test

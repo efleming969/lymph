@@ -1,0 +1,25 @@
+{
+  "name": "@efleming969/expect",
+  "description": "A tiny assertion library for browsers and node",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.module.js",
+  "types": "./lib/index.d.ts",
+  "repository": {},
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0",
+    "@rollup/plugin-typescript": "^8.2",
+    "@types/mocha": "^8.2",
+    "mocha": "^9.0",
+    "rollup": "^2.52",
+    "typescript": "^4.3"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "isolated-tests": "mocha --config mocha-isolated.json",
+    "bundle": "rollup --config rollup.config.js",
+    "build": "npm run compile && npm run isolated-tests && npm run bundle"
+  }
+}

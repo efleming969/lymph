@@ -1,0 +1,9 @@
+{
+  "timeout": 4000,
+  "require": [
+    "lib/test/mochaGlobal.js"
+  ],
+  "spec": [
+    "lib/test/**/*.spec.js"
+  ]
+}
