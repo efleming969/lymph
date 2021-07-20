@@ -45,6 +45,7 @@ const loadDependencies = () => {
     return { ...productionDependencies, ...developmentDependencies }
 }
 
+//TODO: removed unused buildDirectory
 type ServerOptions = {
     buildDirectory: string
     sourceDirectory: string

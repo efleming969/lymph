@@ -1,23 +1,30 @@
 import * as Certificate from "./Certificate"
+import { expect } from "@efleming969/expect"
+
+const createFakeEnvironment = function () {
+    const commands = []
+
+    const exec = ( command, args ) => {
+        commands.push( `${ command } ${ args.join( " " ) }` )
+    }
+
+    const writes = []
+
+    const writeFile = ( path, content ) => {
+        writes.push( { path, content } )
+    }
+
+    return { commands, writes, exec, writeFile }
+}
 
 describe( "certificates", () => {
 
-    it( "generates self-signed certs", () => {
-        let commands = []
+    it( "generates self-signed authority when one is not already created", () => {
+        const environment = createFakeEnvironment()
 
-        const fakeExec = ( command, args ) => {
-            commands.push( `${ command } ${ args.join( " " ) }` )
-        }
+        Certificate.generate( "test-domain", environment.writeFile, environment.exec )
 
-        let writes = []
-
-        const fakeWriteFileSync = ( path, content ) => {
-            writes.push( { path, content } )
-        }
-
-        Certificate.generate( "test-domain", fakeWriteFileSync, fakeExec )
-
-        console.log( commands.join( "\n" ) )
-        console.log( writes.map( x => x.content ).join( "\n" ) )
+        console.log( environment.commands.join( "\n" ) )
+        // console.log( environment.writes.map( x => x.content ).join( "\n" ) )
     } )
 } )
