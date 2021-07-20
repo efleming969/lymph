@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  database:
+    image: postgres:12
+    container_name: migrations-database
+    environment:
+      - POSTGRES_DB=acme
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=P@ssw0rd
+    ports:
+      - 5432:5432
+  test:
+    build:
+      dockerfile: test-runner.dockerfile
+    container_name: migrations-test
+    depends_on:
+      - database
+    working_dir: /app

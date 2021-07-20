@@ -1,0 +1,23 @@
+{
+  "name": "@efleming969/migrations",
+  "version": "1.0.0",
+  "description": "simple migrations utility for postgres",
+  "main": "./lib/main/index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.6"
+  },
+  "devDependencies": {
+    "@types/mocha": "^8.2",
+    "@types/node": "15.12",
+    "@types/pg": "^8.6",
+    "typescript": "^4.3",
+    "mocha": "^9.0"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "integrated-tests": "node --version"
+  }
+}
